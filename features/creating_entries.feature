@@ -5,6 +5,7 @@ Feature: Creating entries
 
   Background:
     Given I am on the homepage
+    And I press "New Entry"
 
   Scenario: creating an entry
     And I fill in "Distance" with "5"

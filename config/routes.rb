@@ -1,5 +1,5 @@
 Ruby5kdev::Application.routes.draw do
   resources :entries
 
-  root :to => 'entries#new'
+  root :to => 'entries#index'
 end

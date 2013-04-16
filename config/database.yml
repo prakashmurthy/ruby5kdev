@@ -17,8 +17,9 @@ development:
   encoding: unicode
   database: ruby5kdev_development
   pool: 5
-  username: ruby5kdev
+  username: ruby5k
   password:
+  host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -43,13 +44,15 @@ test:
   encoding: unicode
   database: ruby5kdev_test
   pool: 5
-  username: ruby5kdev
+  username: ruby5k
   password:
+  host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
   database: ruby5kdev_production
   pool: 5
-  username: ruby5kdev
+  username: ruby5k
   password:
+  host: localhost

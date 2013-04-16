@@ -15,6 +15,7 @@ end
 
 group:test do
   gem "faker", "~> 1.1.2"
+  gem 'cucumber-rails', '1.3.1', :require => false
   gem "capybara", "~> 2.0.2"
   gem "database_cleaner", "~> 0.9.1" 
   gem "launchy", "~> 2.2.0"

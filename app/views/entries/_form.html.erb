@@ -1,33 +1,37 @@
-<%= form_for(@entry) do |f| %>
-  <% if @entry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+<%= form_for @entry, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="alert alert-error">
+    <% @entry.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :distance, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :distance, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :time, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
 
-      <ul>
-      <% @entry.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="form-actions">
+    <%= f.submit "Share", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      entries_path, :class => 'btn' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :distance %><br />
-    <%= f.text_field :distance %>
-  </div>
-  <div class="field">
-    <%= f.label :time %><br />
-    <%= f.number_field :time %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Share" %>
-  </div>
-<% end %>

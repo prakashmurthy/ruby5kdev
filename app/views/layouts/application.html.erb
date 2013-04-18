@@ -28,11 +28,18 @@
                 Signed in as <%= current_user.email %>
               <% else %>
                 <% if current_page?( new_user_registration_path ) %>
-                  Signing in
+                  Signing up
                 <% else %>
                   <%= link_to "Sign up", new_user_registration_path %>
                 <% end %>
               <% end %>
+              </li>
+              <li>
+                <% if current_page?( new_user_session_path ) %>
+                  Signing in
+                <% else %>
+                  <%= link_to "Sign in", new_user_session_path %>
+                <% end %>
               </li>
             </ul>
           </div>

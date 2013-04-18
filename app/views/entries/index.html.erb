@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <% @entries.each do |entry| %>
-      <tr>
+      <tr class="row-<%= entry.description.downcase.split.join('_') %>">
         <!-- td><%= link_to entry.id, entry_path(entry) %></td -->
         <td><%= entry.distance %></td>
         <td><%= entry.time %></td>

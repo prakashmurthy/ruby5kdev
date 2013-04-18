@@ -10,4 +10,4 @@ Feature: Signing up
     And I fill in password with "password"
     And I fill in password confirmation with "password"
     And I press "Sign up"
-    Then I should see "You have signed up successfully"
+    Then I should see "A message with a confirmation link has been sent to your email address."

@@ -23,7 +23,17 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li><%= link_to "Browse Entries", entries_path %></li>
-              <li><%= link_to "Contact Us" %></li>
+              <li>
+              <% if user_signed_in? %>
+                Signed in as <%= current_user.email %>
+              <% else %>
+                <% if current_page?( new_user_registration_path ) %>
+                  Signing in
+                <% else %>
+                  <%= link_to "Sign up", new_user_registration_path %>
+                <% end %>
+              <% end %>
+              </li>
             </ul>
           </div>
         </div>

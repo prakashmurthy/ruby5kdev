@@ -2,6 +2,14 @@ Given /^I am on the homepage$/ do
   visit "/"
 end
 
+When /^(?:|I )fill in password with "([^"]*)"$/ do |value|
+  page.find("#user_password").set "#{value}"
+end
+
+When /^(?:|I )fill in password confirmation with "([^"]*)"$/ do |value|
+  page.find("#user_password_confirmation").set "#{value}"
+end
+
 Given(/^I fill in "(.*?)" with "(.*?)"$/) do |element, text|
   fill_in element, with: text
 end

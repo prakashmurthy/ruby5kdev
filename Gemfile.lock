@@ -222,6 +222,7 @@ DEPENDENCIES
   launchy (~> 2.2.0)
   less-rails
   pg (= 0.14.1)
+  pry (= 0.9.12)
   rails (= 3.2.11)
   rspec-rails (~> 2.12.2)
   sass-rails (~> 3.2.3)

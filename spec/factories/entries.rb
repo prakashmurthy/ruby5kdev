@@ -6,5 +6,6 @@ FactoryGirl.define do
     time 1
     location "MyString"
     description "MyText"
+    user 
   end
 end

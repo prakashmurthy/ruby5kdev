@@ -53,11 +53,24 @@
         </div>
       <% end %>
       <div class="row">
-        <div class="span9"><%= yield %></div>
         <div class="span3">
-          <h2>About Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        
+          <%= image_tag src="/assets/run_walk_india.jpg" %>
+          <h3>Details</h3>
+          <p><b>Date: </b>Sunday June 23, 2013</p>
+          <p><b>Time: </b>6:30am - 8:30am IST</p>
+          <p><b>Location: </b>Starts and ends at <%= link_to "Hyatt Regency Pune", "http://pune.regency.hyatt.com/hyatt/hotels-pune-regency/index.jsp?null" %> - the venue of the Conference.</p>
+          <h3>Twitter Chatter</h3>
+          <a class="twitter-timeline" href="https://twitter.com/search?q=ruby5k" data-widget-id="318562513467875329">Tweets about "ruby5k"</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <h3>Start Training!</h3>
+          <p>Get into the habit of running regularly.</p>
+          <p>Get Fit for Life!</p>
+          <h3>Organizers</h3>
+          <p><%= link_to "Prakash Murthy", "http://twitter.com/_prakash" %></p>
+          <p><%= link_to "Anil Wadghule", "https://twitter.com/anildigital" %> </p>
+          <p>and others...</p>
         </div>
+        <div class="span9"> <%= yield %> </div>
       </div>
     </div>
   </body>

@@ -10,3 +10,13 @@ Given(/^"(.*?)" has created the following entries:$/) do |email, table|
     Entry.create!(attributes)
   end
 end
+
+Given(/^I "(.*?)" within the line containing "(.*?)"$/) do |action, entry_description|
+  element = find("tr.row-#{entry_description.downcase.split.join("_")}")
+  element.click_link(action)
+end
+
+Then(/^within line containing "(.*?)" I should not see "(.*?)"$/) do |entry_description, action|
+  element = find("tr.row-#{entry_description.downcase.split.join("_")}")
+  element.should_not have_content action
+end

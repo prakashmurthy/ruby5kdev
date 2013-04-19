@@ -25,8 +25,3 @@ end
 Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content text
 end
-
-Given(/^I delete within line with "(.*?)"$/) do |text|
-  element = find("tr.row-#{text.downcase.split.join("_")}")
-  element.click_link("Delete")
-end

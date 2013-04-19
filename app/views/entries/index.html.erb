@@ -10,7 +10,7 @@
       <th><%= model_class.human_attribute_name(:time) %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <!--th><%= model_class.human_attribute_name(:created_at) %></th -->
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@
         <td><%= entry.time %></td>
         <td><%= entry.location %></td>
         <td><%= entry.description %></td>
-        <!-- td><%=l entry.created_at %></td -->
+        <td><%= humanize(Time.now - entry.created_at) %></td>
         <td>
           <% if user_signed_in? %>
             <% if current_user_is_creator_of_entry?(entry) %>

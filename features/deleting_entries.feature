@@ -4,7 +4,11 @@ Feature: Deleting entries
   I want to be able to do so easily form the gui
 
   Scenario: Delete entry from index page
-    Given there are the following entries:
+    Given there are the following users:
+      | email            | password |
+      | user@ruby5k.in   | password |
+    And I am signed in as them
+    And "user@ruby5k.in" has created the following entries:
       | distance | time | location | description |
       | 7        | 65   | statium  | Awesome     |
       | 1        | 12   | Lake     | Quick one   |

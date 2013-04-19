@@ -4,8 +4,16 @@ Feature: Creating entries
   I want to be able to do so from the main page
 
   Background:
-    Given I am on the homepage
+    Given there are the following users:
+      | email            | password |
+      | user@ruby5k.in   | password |
+    And I am on the homepage
     And I press "New Entry"
+    Then I should see "You need to sign in or sign up before continuing."
+    When I fill in "Email" with "user@ruby5k.in"
+    And I fill in "Password" with "password"
+    And I press "Sign in"
+    Then I should see "Signed in successfully"
 
   Scenario: creating an entry
     And I fill in "Distance" with "5"
@@ -14,6 +22,7 @@ Feature: Creating entries
     And I fill in "Description" with "Good run today!"
     And I press "Share"
     Then I should see "Training has been successfully posted"
+    And I should see "Created by user@ruby5k.in"
 
   Scenario: entry with just distance should be valid
     And I fill in "Distance" with "5"

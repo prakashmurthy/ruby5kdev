@@ -23,24 +23,24 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li><%= link_to "Browse Entries", entries_path %></li>
-              <li>
               <% if user_signed_in? %>
-                Signed in as <%= current_user.email %>
+                <li><a href="#">Signed in as <%= current_user.email %></a></li>
               <% else %>
                 <% if current_page?( new_user_registration_path ) %>
-                  Signing up
+                  <li><a href="#">Signing up</a></li>
                 <% else %>
-                  <%= link_to "Sign up", new_user_registration_path %>
+                  <li><%= link_to "Sign up", new_user_registration_path %></li>
                 <% end %>
               <% end %>
-              </li>
-              <li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+              <% else %>
                 <% if current_page?( new_user_session_path ) %>
-                  Signing in
+                  <li><a href="#">Signing in</a></li>
                 <% else %>
-                  <%= link_to "Sign in", new_user_session_path %>
+                  <li><%= link_to "Sign in", new_user_session_path %></li>
                 <% end %>
-              </li>
+              <% end %>
             </ul>
           </div>
         </div>

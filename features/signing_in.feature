@@ -7,7 +7,6 @@ Feature: Signing in
     Given there are the following users:
       | email             | password | unconfirmed | 
       | user@ruby5k.in    | password | true        |
-
     And "user@ruby5k.in" opens the email with subject "Confirmation instructions"
     And they click the first link in the email
     Then I should see "Your account was successfully confirmed"

@@ -10,6 +10,7 @@
   <dd><%= @entry.time %></dd>
   <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
   <dd><%= @entry.location %></dd>
+  <br><small>Created by <%= @entry.user.email %></small>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @entry.description %></dd>
 </dl>

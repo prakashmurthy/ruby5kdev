@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_filter :authenticate_user!, :except => [ :index, :show ]
   # GET /entries
   # GET /entries.json
   def index
@@ -40,7 +41,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(params[:entry])
+    @entry = Entry.new(params[:entry].merge!(:user => current_user))
 
     respond_to do |format|
       if @entry.save

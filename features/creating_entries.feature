@@ -10,10 +10,7 @@ Feature: Creating entries
     And I am on the homepage
     And I press "New Entry"
     Then I should see "You need to sign in or sign up before continuing."
-    When I fill in "Email" with "user@ruby5k.in"
-    And I fill in "Password" with "password"
-    And I press "Sign in"
-    Then I should see "Signed in successfully"
+    And I am signed in as them
 
   Scenario: creating an entry
     And I fill in "Distance" with "5"

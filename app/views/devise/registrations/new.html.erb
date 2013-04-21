@@ -13,17 +13,20 @@
   <%= f.password_field :password_confirmation %></div>
 
 <hr>
-  <p><%= f.radio_button :running_in_pune, "yes", :checked => true %> <%= f.label :running_in_pune, "Yes, I will run the Ruby 5K during RubyConfIndia 2013 on June 23!!" %></p>
-  <p><%= f.radio_button :running_in_pune, "no" %> <%= f.label :running_in_pune, "No, I want to use this site to encourage others / or train to run a 5K locally." %></p>
+  <h4>Participation in the 5K run at <%= link_to "RubyConfIndia 2013", "http://rubyconfindia.org/2013/" %>:</h4>
+  <p><%= f.radio_button :running_in_pune, "yes", :checked => true %> <%= f.label :running_in_pune, "Yes, I will run the 5K during RubyConfIndia 2013 on June 23!!" %></p>
+  <p><%= f.radio_button :running_in_pune, "no" %> <%= f.label :running_in_pune, "No, I want to use this site to encourage others, or train to run a 5K locally." %></p>
 
   <br>
 <hr>
+  <h4>My level as a runner:</h4>
   <div><%= f.radio_button :runner_level, "0", :checked => true %> <%= f.label :runner_level, "I never ran in my life before!" %></div>
   <div><%= f.radio_button :runner_level, "1" %> <%= f.label :runner_level, "I run infrequently ( 0-1 times per week )" %></div>
-  <div><%= f.radio_button :runner_level, "2" %> <%= f.label :runner_level, "I run very regularly ( More than 2 times per week )" %></div>
+  <div><%= f.radio_button :runner_level, "2" %> <%= f.label :runner_level, "I run very regularly ( 2 or more times per week )" %></div>
   <div><%= f.radio_button :runner_level, "3" %> <%= f.label :runner_level, "I am a professional runner!" %></div>
   <br>
 <hr>
+  <h4>My personal goal at the Ruby 5K:</h4>
   <div><%= f.radio_button :runner_goal, "0", :checked => true %> <%= f.label :runner_goal, "I will run my first 5K race!" %></div>
   <div><%= f.radio_button :runner_goal, "1" %> <%= f.label :runner_goal, "I will set a new PR(Personal Record) for a 5K race!" %></div>
   <div><%= f.radio_button :runner_goal, "2" %> <%= f.label :runner_goal, "I am not participating." %></div>

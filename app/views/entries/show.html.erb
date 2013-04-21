@@ -1,18 +1,17 @@
 <%- model_class = Entry -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h2><%=t '.title', :default => model_class.model_name.human %></h2>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:distance) %>:</strong></dt>
-  <dd><%= @entry.distance %></dd>
+  <dd><%= @entry.distance %><small> Kilometers</small></dd>
   <dt><strong><%= model_class.human_attribute_name(:time) %>:</strong></dt>
-  <dd><%= @entry.time %></dd>
+  <dd><%= @entry.time %><small> Minutes (rounded up to the nearest minute).</small></dd>
   <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
   <dd><%= @entry.location %></dd>
-  <br><small>Created by <%= @entry.user.email %></small>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @entry.description %></dd>
+  <dt><strong>Additional Details:</strong></dt>
+  <dd><%= @entry.description %><br><small>Created by <%= @entry.user.email %></small></dd> 
 </dl>
 
 <div class="form-actions">

@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <!--th><%= model_class.human_attribute_name(:id) %></th -->
+      <th></th>
       <th><%= model_class.human_attribute_name(:distance) %></th>
       <th><%= model_class.human_attribute_name(:time) %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr class="row-<%= entry.description.downcase.split.join('_') %>">
-        <!-- td><%= link_to entry.id, entry_path(entry) %></td -->
+        <td><%= gravatar_for(entry.user) %></td>
         <td><%= entry.distance %></td>
         <td><%= entry.time %></td>
         <td><%= entry.location %></td>

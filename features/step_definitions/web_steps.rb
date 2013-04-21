@@ -18,6 +18,11 @@ Given(/^I (?:press|follow) "(.*?)"$/) do |element|
   click_on element
 end
 
+# Special case step to handle duplicate "New Training Session" links in the entry#index page
+Given(/^I click on "(.*?)"$/) do |element|
+  first(:link, element).click
+end
+
 Then(/^I should see "(.*?)"$/) do |text|
   page.should have_content text
 end

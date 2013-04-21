@@ -9,7 +9,7 @@ en:
       cancel: "Cancel"
       confirm: "Are you sure?"
       destroy: "Delete"
-      new: "New Entry"
+      new: "New Training Run"
     titles:
       edit: "Edit"
       save: "Save"

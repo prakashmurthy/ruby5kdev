@@ -8,7 +8,7 @@ Feature: Creating entries
       | email            | password |
       | user@ruby5k.in   | password |
     And I am on the homepage
-    And I press "New Entry"
+    And I click on "New Training Run"
     Then I should see "You need to sign in or sign up before continuing."
     And I am signed in as them
 

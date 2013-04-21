@@ -21,7 +21,7 @@
         <td><%= entry.distance %></td>
         <td><%= entry.time %></td>
         <td><%= entry.location %></td>
-        <td><%= entry.description %></td>
+        <td><%= link_to entry.description, entry_path(entry) %></td>
         <td><%= humanize(Time.now - entry.created_at) %></td>
         <td>
           <% if user_signed_in? %>

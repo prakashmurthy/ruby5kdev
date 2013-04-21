@@ -11,6 +11,14 @@ Given(/^"(.*?)" has created the following entries:$/) do |email, table|
   end
 end
 
+# Same as above steps, but not sure how to make reuse code instead ofduplicating.
+Given(/^"(.*?)" creates the following entry:$/) do |email, table|
+  table.hashes.each do |attributes|
+    attributes = attributes.merge!(:user => User.find_by_email!(email))
+    Entry.create!(attributes)
+  end
+end
+
 Given(/^I "(.*?)" within the line containing "(.*?)"$/) do |action, entry_description|
   element = find("tr.row-#{entry_description.downcase.split.join("_")}")
   element.click_link(action)

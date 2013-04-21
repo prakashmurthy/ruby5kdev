@@ -25,3 +25,7 @@ end
 Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content text
 end
+
+Then(/^"(.*?)" should appear before "(.*?)"$/) do |text1, text2|
+  page.body.should =~ /#{text1}.*#{text2}/m #, "'#{text1}' does not appear before '#{text2}'"
+end

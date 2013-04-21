@@ -29,3 +29,7 @@ end
 Then(/^"(.*?)" should appear before "(.*?)"$/) do |text1, text2|
   page.body.should =~ /#{text1}.*#{text2}/m #, "'#{text1}' does not appear before '#{text2}'"
 end
+
+When(/^I choose "(.*?)" for "(.*?)" radio button$/) do |option, check_box_name|
+  page.choose("user_#{check_box_name}_#{option}")
+end

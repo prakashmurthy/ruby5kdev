@@ -14,8 +14,8 @@
 
 <hr>
   <h4>Participation in the 5K run at <%= link_to "RubyConfIndia 2013", "http://rubyconfindia.org/2013/" %>:</h4>
-  <p><%= f.radio_button :running_in_pune, "yes", :checked => true %> <%= f.label :running_in_pune, "Yes, I will run the 5K during RubyConfIndia 2013 on June 23!!" %></p>
-  <p><%= f.radio_button :running_in_pune, "no" %> <%= f.label :running_in_pune, "No, I want to use this site to encourage others, or train to run a 5K locally." %></p>
+  <p><%= f.radio_button :running_in_pune, true, :checked => true %> <%= f.label :running_in_pune, "Yes, I will run the 5K during RubyConfIndia 2013 on June 23!!" %></p>
+  <p><%= f.radio_button :running_in_pune, false %> <%= f.label :running_in_pune, "No, I want to use this site to encourage others, or train to run a 5K locally." %></p>
 
   <br>
 <hr>

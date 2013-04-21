@@ -65,7 +65,7 @@ Ruby5kdev::Application.configure do
   }
 
   # default url option for mail
-  config.action_mailer.default_url_options = { :host => "http://ruby5kdev.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "ruby5kdev.herokuapp.com" }
 
   # Enable threaded mode
   # config.threadsafe!

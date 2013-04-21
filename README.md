@@ -4,7 +4,7 @@
 
 ## Want to set up this application locally?
 
-[[Instructions for setting up the ruby5kdev application locally]]
+[Instructions for setting up the ruby5kdev application locally](https://github.com/prakashmurthy/ruby5kdev/wiki/Instructions-for-setting-up-the-ruby5kdev-application-locally)
 
 ## Development plan & progress:
 

@@ -28,7 +28,7 @@
         <td><%= entry.distance %></td>
         <td><%= entry.time %></td>
         <td><%= entry.location %></td>
-        <td><%= link_to entry.description, entry_path(entry) %></td>
+        <td><%= link_to truncate(entry.description, :length => 75, :separator => ' ', :omission => '... (continued)'), entry_path(entry) %></td>
         <td><%= humanize(Time.now - entry.created_at) %></td>
         <td>
           <% if user_signed_in? %>

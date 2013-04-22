@@ -1,7 +1,9 @@
 Given(/^there are the following users:$/) do |table|
   table.hashes.each do |attributes|
+    is_admin = attributes.delete("admin") == "true"
     unconfirmed = attributes.delete("unconfirmed") == "true"
     @user = User.create!(attributes)
+    @user.update_attribute("admin", is_admin)
     @user.confirm! unless unconfirmed
   end
 end

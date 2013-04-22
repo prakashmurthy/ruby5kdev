@@ -26,7 +26,11 @@
               <li><%= link_to "I never ran in my life!", newcomers_path %></li>
               <li><%= link_to "Couch to 5K Training Plan", "http://www.coolrunning.com/engine/2/2_3/181.shtml", :target => "_blank" %></li>
               <li><%= link_to "Contact us", contact_us_path %></li>
-              <li><%= link_to "RubyConfIndia 2013", "http://rubyconfindia.org/2013/", :target => "_blank" %></li>
+              <% if user_signed_in? && current_user.admin? %>
+                <li>Admin</li>
+              <% else %>
+                <li><%= link_to "RubyConfIndia 2013", "http://rubyconfindia.org/2013/", :target => "_blank" %></li>
+              <% end %>
               <% if user_signed_in? %>
                 <li><a href="#">Signed in as <%= current_user.email %></a></li>
               <% else %>

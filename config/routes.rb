@@ -7,4 +7,9 @@ Ruby5kdev::Application.routes.draw do
   resources :entries
 
   root :to => 'entries#index'
+
+  namespace :admin do
+    root :to => 'base#index'
+    resources :users
+  end
 end

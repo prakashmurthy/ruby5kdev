@@ -13,4 +13,5 @@ Feature: Viewing users
     And I follow "Admin"
     And I follow "Users"
     Then I should see "Users List"
-    And I should see "user@ruby5k.in"
+    When I follow "user@ruby5k.in"
+    Then I should see "User Profile for user@ruby5k.in"

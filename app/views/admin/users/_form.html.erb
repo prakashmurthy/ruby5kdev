@@ -1,0 +1,25 @@
+<%= form_for [:admin, @user] do |f| %>
+  <div class="alert alert-error">
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password, :class => 'password_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Create User", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.link.cancel")),
+      entries_path, :class => 'btn' %>
+  </div>
+<% end %>

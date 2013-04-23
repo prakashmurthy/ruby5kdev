@@ -23,4 +23,6 @@
   <%= link_to t('.back', :default => t("helpers.links.back")),
     admin_users_path, :class => 'btn'  %>
   <%= link_to "Edit User", edit_admin_user_path( @user ), :class => 'btn' %>
+  <%= link_to "Delete User", admin_user_path( @user ), :method => :delete,
+    :confirm => "Are you sure you want to delete this user?", :class => 'btn' %>
 </div>

@@ -38,3 +38,7 @@ end
 When(/^I choose "(.*?)" for "(.*?)" radio button$/) do |option, check_box_name|
   page.choose("user_#{check_box_name}_#{option}")
 end
+
+When /^I check "(.*?)"$/ do |field|
+  check(field)
+end

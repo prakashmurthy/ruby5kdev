@@ -13,7 +13,13 @@
   <div class="control-group">
     <%= f.label :password, :class => 'control-label' %>
     <div class="controls">
-      <%= f.password_field :password, :class => 'password_field' %>
+      <%= f.password_field :password, :class => 'password-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.check_box :admin %>
+    <div class="controls">
+      <%= f.label :admin, "Is an admin?", :class => 'control-label' %>
     </div>
   </div>
 

@@ -22,4 +22,5 @@
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
     admin_users_path, :class => 'btn'  %>
+  <%= link_to "Edit User", edit_admin_user_path( @user ), :class => 'btn' %>
 </div>

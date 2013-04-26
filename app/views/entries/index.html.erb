@@ -25,11 +25,11 @@
     <% @entries.each do |entry| %>
       <tr class="row-<%= entry.description.downcase.split.join('_') %>">
         <td><%= gravatar_for(entry.user) %></td>
-        <td><%= entry.distance %></td>
-        <td><%= entry.time %></td>
-        <td><%= entry.location %></td>
-        <td><%= link_to truncate(entry.description, :length => 75, :separator => ' ', :omission => '... (continued)'), entry_path(entry) %></td>
-        <td><%= humanize(Time.now - entry.created_at) %></td>
+        <td><%= link_to entry.distance, entry_path(entry) %></td>
+        <td><%= link_to entry.time, entry_path(entry) %></td>
+        <td><%= link_to entry.location, entry_path(entry) %></td>
+        <td><%= link_to truncate(entry.description, :length => 75, :separator => ' ', :omission => '... (more)'), entry_path(entry) %></td>
+        <td><%= link_to humanize(Time.now - entry.created_at), entry_path(entry) %></td>
         <td>
           <% if user_signed_in? %>
             <% if current_user_is_creator_of_entry?(entry) %>

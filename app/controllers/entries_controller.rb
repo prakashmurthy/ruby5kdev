@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.find( :all, :order => "created_at DESC" )
+    @entries = Entry.find( :all, :order => "created_at DESC", :include => [:user] )
     @days_left = ( Date.new( 2013, 06, 23 ) - Date.today ).to_i
 
     respond_to do |format|

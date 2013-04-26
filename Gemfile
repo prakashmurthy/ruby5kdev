@@ -8,6 +8,8 @@ gem 'rails', '3.2.11'
 gem 'pg', '0.14.1'
 gem 'devise', '2.2.3'
 
+gem 'bullet', group: :development
+
 group:development, :test do
   gem "rspec-rails", "~> 2.12.2"
   gem "factory_girl_rails", "~> 4.2.0" 

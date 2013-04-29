@@ -5,9 +5,9 @@ Feature: Editing a user
 
   Background:
     Given there are the following users:
-      | email                | password | admin |
-      | admin@ruby5k.in      | password | true  |
-      | user@ruby5k.in       | password | true  |
+      | email                | password | admin | first_name | last_name |
+      | admin@ruby5k.in      | password | true  | Admin      | Istrator  |
+      | user@ruby5k.in       | password | true  | Ruby       | Tuesday   |
     And I am signed in as "admin@ruby5k.in"
     Given I am on the homepage
     And I follow "Admin"
@@ -17,10 +17,14 @@ Feature: Editing a user
 
   Scenario: Updating a user's details
     And I fill in "Email" with "newguy@ruby5k.in"
+    And I fill in "Last name" with "Wednesday"
     And I press "Update User"
     Then I should see "User has been updated."
     And I should see "newguy@ruby5k.in"
     And I should not see "user@ruby5k.in"
+    When I follow "newguy@ruby5k.in"
+    And I should see "Wednesday"
+    And I should not see "Tuesday"
 
   Scenario: Updating with a invalid email fails
     And I fill in "Email" with "XYZ"

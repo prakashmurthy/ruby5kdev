@@ -1,9 +1,9 @@
 <%= form_for @entry, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="alert alert-error">
-    <% @entry.errors.full_messages.each do |msg| %>
+   <% @entry.errors.full_messages.each do |msg| %>
+    <div class="alert alert-error">
       <li><%= msg %></li>
+    </div>
     <% end %>
-  </div>
   <div class="control-group">
     <%= f.label :distance, :class => 'control-label' %>
     <div class="controls">
@@ -27,7 +27,7 @@
     <li><small>How was the run for you? How was the weather like? </small></li>
     <li><small>What did you have to do to make sure you ran today? </small></li>
     <li><small>What was the time-split for today's run? (Example: 10 minute for the first mile, 9 minute for the second). </small></li>
-    <li><small>What was the run-walk ration that you followed for this run? (Example: 2 minute run folloed by 2 minute walk; repeated 5 times). </small></li>
+    <li><small>What was the run-walk ratio that you followed for this run? (Example: 2 minute run folloed by 2 minute walk; repeated 5 times). </small></li>
     <li><small>What new thing did you try during today's run?</small></li>
   </ul>
   </p>

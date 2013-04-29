@@ -11,7 +11,7 @@ en:
       destroy: "Delete"
       new: "New Training Run"
     titles:
-      edit: "Edit"
+      edit: "Edit %{model}"
       save: "Save"
-      new: "New"
+      new: "New %{model}"
       delete: "Delete"

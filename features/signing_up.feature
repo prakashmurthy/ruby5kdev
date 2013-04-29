@@ -7,6 +7,8 @@ Feature: Signing up
     Given I am on the homepage
     When I click on "Sign up"
     And I fill in "Email" with "user@ruby5k.com"
+    And I fill in "First name" with "John"
+    And I fill in "Last name" with "Newman"
     And I fill in password with "password"
     And I fill in password confirmation with "password"
     And I choose "false" for "running_in_pune" radio button

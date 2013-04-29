@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422205026) do
+ActiveRecord::Schema.define(:version => 20130429110332) do
 
   create_table "entries", :force => true do |t|
     t.float    "distance"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(:version => 20130422205026) do
     t.string   "runner_level"
     t.string   "runner_goal"
     t.boolean  "admin",                  :default => false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

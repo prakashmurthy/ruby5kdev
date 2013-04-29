@@ -5,8 +5,8 @@ Feature: Creating entries
 
   Background:
     Given there are the following users:
-      | email            | password |
-      | user@ruby5k.in   | password |
+      | email            | password | first_name | last_name |
+      | user@ruby5k.in   | password | John       | Newman   |
     And I am on the homepage
     And I click on "New Training Run"
     Then I should see "You need to sign in or sign up before continuing."
@@ -19,7 +19,8 @@ Feature: Creating entries
     And I fill in "Additional Details" with "Good run today!"
     And I press "Share"
     Then I should see "Training has been successfully posted"
-    And I should see "Created by user@ruby5k.in"
+    And I should see "Training run by John Newman"
+    And I should see "Created by John Newman"
 
   Scenario: entry with just distance should be valid
     And I fill in "Distance" with "5"

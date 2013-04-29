@@ -1,7 +1,7 @@
 <%- model_class = Entry -%>
 <div class="page-header">
     <td><%= gravatar_for(@entry.user) %></td>
-    <h3>Training run by <%= @entry.user.email %></h3>
+    <h3>Training run by <%= @entry.user.name %></h3>
 </div>
 
 <dl class="dl-horizontal">
@@ -12,7 +12,7 @@
   <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
   <dd><%= @entry.location %></dd>
   <dt><strong>Additional Details:</strong></dt>
-  <dd><%= @entry.description %><br><small>Created by <%= @entry.user.email %></small></dd> 
+  <dd><%= @entry.description %><br><small>Created by <%= @entry.user.name %></small></dd> 
 </dl>
 
 <div class="form-actions">

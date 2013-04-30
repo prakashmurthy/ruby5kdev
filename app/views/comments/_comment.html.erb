@@ -1,0 +1,6 @@
+<%= div_for(comment) do %>
+  <dl class="dl-horizontal">
+    <dt><strong><%= comment.user.name %>:</strong></dt>
+    <dd><%= simple_format(comment.text) %> <small><%= humanize(Time.now - comment.created_at) %></small></dd>
+  </dl>
+<% end %>

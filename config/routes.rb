@@ -4,7 +4,9 @@ Ruby5kdev::Application.routes.draw do
 
   devise_for :users
 
-  resources :entries
+  resources :entries do
+    resources :comments
+  end
 
   root :to => 'entries#index'
 

@@ -16,6 +16,7 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     @entry = Entry.find(params[:id])
+    @comment = @entry.comments.includes(:user).build
 
     respond_to do |format|
       format.html # show.html.erb

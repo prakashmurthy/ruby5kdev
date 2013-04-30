@@ -1,7 +1,7 @@
 <%- model_class = Entry -%>
 <div class="page-header">
-    <td><%= gravatar_for(@entry.user) %></td>
-    <h3>Training run by <%= @entry.user.name %></h3>
+  <td><%= gravatar_for(@entry.user) %></td>
+  <h3>Training run by <%= @entry.user.name %></h3>
 </div>
 
 <dl class="dl-horizontal">
@@ -23,10 +23,18 @@
       <%= link_to t('.edit', :default => t("helpers.links.edit")),
         edit_entry_path(@entry), :class => 'btn' %>
       <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              entry_path(@entry),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+            entry_path(@entry),
+            :method => 'delete',
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'btn btn-danger' %>
     <% end %>
+    <hr>
+    <h4>Comments</h4>
+    <% if @entry.comments.exists? %>
+      <%= render @entry.comments.includes(:user).select(&:persisted?) %>
+    <% else %>
+      There are no comments for this entry. Be the first person to add comments.
+    <% end %>
+    <%= render "comments/form" %>
   <% end %>
 </div>

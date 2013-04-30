@@ -1,0 +1,17 @@
+<strong>New Comment</strong>
+<%= form_for [@entry, @comment] do |f| %>
+  <% @comment.errors.full_messages.each do |msg| %>
+    <div class="alert alert-error">
+      <li><%= msg %></li>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :text, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Create Comment", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

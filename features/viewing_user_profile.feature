@@ -24,3 +24,8 @@ Feature: Viewing user profile
     And I follow "Gruelling run. Terrific event"
     And I follow "Jane Fonda"
     Then I should see "Jane Fonda's profile on Ruby5K.in"
+
+  Scenario: Viewing own profile
+    And I follow "Signed in as bill@ruby5k.in"
+    Then I should see "Bill Tucker's profile on Ruby5K.in"
+    

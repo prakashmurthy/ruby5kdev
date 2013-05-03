@@ -32,7 +32,7 @@
                 <li><%= link_to "RubyConfIndia 2013", "http://rubyconfindia.org/2013/", :target => "_blank" %></li>
               <% end %>
               <% if user_signed_in? %>
-                <li><a href="#">Signed in as <%= current_user.email %></a></li>
+                <li><%= link_to "Signed in as #{current_user.email}", user_path(current_user) %></li>
               <% else %>
                 <% if current_page?( new_user_registration_path ) %>
                   <li><a href="#">Signing up</a></li>

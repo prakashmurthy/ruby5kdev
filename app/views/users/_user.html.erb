@@ -4,8 +4,10 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong>Email :</strong></dt>
-  <dd><%= @user.email %></dd>
+  <% if current_user.admin? %>
+    <dt><strong>Email :</strong></dt>
+    <dd><%= @user.email %></dd>
+  <% end %>
   <dt><strong>First Name :</strong></dt>
   <dd><%= @user.first_name %></dd>
   <dt><strong>Last name :</strong></dt>

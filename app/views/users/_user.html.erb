@@ -1,0 +1,46 @@
+<div class="page-header">
+    <td><%= gravatar_for(@user) %></td>
+    <h4><%= @user.name %>'s profile on Ruby5K.in</h4>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Email :</strong></dt>
+  <dd><%= @user.email %></dd>
+  <dt><strong>First Name :</strong></dt>
+  <dd><%= @user.first_name %></dd>
+  <dt><strong>Last name :</strong></dt>
+  <dd><%= @user.last_name %></dd>
+  <dt><strong>Created At :</strong></dt>
+  <dd><%= @user.created_at.strftime( "%Y-%m-%d %H:%M:S %z" ) %></dd>
+  <dt><strong>Admin User? :</strong></dt>
+  <dd><%= @user.admin? ? "Yes" : "No"  %></dd>
+  <dt><strong>Running in Pune? :</strong></dt>
+  <dd><%= @user.running_in_pune? ? "Yes" : "No"  %></dd>
+  <dt><strong>My level as a runner :</strong></dt>
+  <dd>
+  <% if @user.runner_level == "0" %>
+    I never ran in my life before!
+  <% elsif @user.runner_level == "1" %>
+    I run infrequently ( 0-1 times per week )
+  <% elsif @user.runner_level == "2" %>
+    I run very regularly ( 2 or more times per week )
+  <% elsif @user.runner_level == "3" %>
+    I am a professional runner!
+  <% else %>
+    Runner level not set
+  <% end %>
+  </dd>
+  <dt><strong>My goal at Ruby 5K :</strong></dt>
+  <dd>
+  <% if @user.runner_goal == "0" %>
+    I will run my first 5K race!
+  <% elsif @user.runner_goal == "1" %>
+    I will set a new PR(Personal Record) for a 5K race!
+  <% elsif @user.runner_goal == "2" %>
+    I am not participating.
+  <% else %>
+    Runner goal not set
+  <% end %>
+  </dd>
+</dl>
+

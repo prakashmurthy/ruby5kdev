@@ -1,7 +1,7 @@
 <%- model_class = Entry -%>
 <div class="page-header">
-  <td><%= gravatar_for(@entry.user) %></td>
-  <h3>Training run by <%= @entry.user.name %></h3>
+  <td><%= link_to gravatar_for(@entry.user), user_path(@entry.user) %></td>
+  <h3>Training run by <%= link_to @entry.user.name, user_path(@entry.user)  %></h3>
 </div>
 
 <dl class="dl-horizontal">

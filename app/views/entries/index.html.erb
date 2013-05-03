@@ -24,7 +24,7 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr class="row-<%= entry.description.downcase.split.join('_') %>">
-        <td><%= gravatar_for(entry.user) %></td>
+        <td><%= link_to gravatar_for(entry.user), user_path(entry.user) %></td>
         <td><%= link_to entry.distance, entry_path(entry) %></td>
         <td><%= link_to entry.time, entry_path(entry) %></td>
         <td><%= link_to entry.location, entry_path(entry) %></td>

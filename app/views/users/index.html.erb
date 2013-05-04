@@ -1,7 +1,17 @@
-<%- model_class = Entry -%>
+<%- model_class = User -%>
 <div class="page-header">
   <h4>Run a 5K with the following rubyists at RubyConfIndia 2013!</h4>
 </div>
+<% unless user_signed_in? %>
+
+  <%= link_to "Sign up",
+    new_user_registration_path,
+    :class => 'btn btn-primary' %>
+  <%= link_to "Sign in",
+    new_user_session_path,
+    :class => 'btn btn-primary' %>
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>

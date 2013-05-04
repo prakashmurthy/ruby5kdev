@@ -6,10 +6,10 @@
   <% end %>
 
   <div><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, disabled: true %></div>
 
   <div><%= f.label :first_name %>
-  <%= f.text_field :first_name %></div>
+  <%= f.text_field :first_name, :autofocus => true  %></div>
 
   <div><%= f.label :last_name %>
   <%= f.text_field :last_name %></div>

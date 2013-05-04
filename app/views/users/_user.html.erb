@@ -37,11 +37,14 @@
   <% end %>
   </dd>
 </dl>
+<br><br><br>
 <% training_entries = @user.entries.includes(:user) %>
 <% if training_entries.any? %>
-  <br><br><br>
   <h4>Training runs posted by <%= @user.name %></h4>
   <%= render :partial => "entries/table", :locals => { :entries => training_entries } %>
 <% else %>
-  <b><%= @user.name %> has not posted any training runs on <%= link_to "ruby5k.in", root_path %></b>
+  <b><%= @user.name %> has not posted any training runs on <%= link_to "ruby5k.in", root_path %></b><br><br>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+  new_entry_path,
+  :class => 'btn btn-primary' %>
 <% end %>

@@ -3,7 +3,7 @@ Ruby5kdev::Application.routes.draw do
   match 'newcomers'  => 'misc#newcomers',  :as => :newcomers
 
   devise_for :users
-  resources  :users
+  resources  :users, :path => "runners"
 
   resources :entries do
     resources :comments

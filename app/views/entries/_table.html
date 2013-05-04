@@ -1,0 +1,44 @@
+<%- model_class = Entry -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Distance <small>(in kilometers)</small></th>
+      <th>Time <small>(in number of minutes)</th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th>Additional Details</th>
+      <th>Posted</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% entries.each do |entry| %>
+      <tr class="row-<%= entry.description.downcase.split.join('_') %>">
+        <td><%= link_to gravatar_for(entry.user), user_path(entry.user) %></td>
+        <td><%= link_to entry.distance, entry_path(entry) %></td>
+        <td><%= link_to entry.time, entry_path(entry) %></td>
+        <td><%= link_to entry.location, entry_path(entry) %></td>
+        <td><%= link_to truncate(entry.description, :length => 75, :separator => ' ', :omission => '... (more)'), entry_path(entry) %></td>
+        <td><%= link_to humanize(Time.now - entry.created_at), entry_path(entry) %></td>
+        <td>
+          <% if user_signed_in? %>
+            <% if current_user_is_creator_of_entry?(entry) %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_entry_path(entry), :class => 'btn btn-mini' %>
+              <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                entry_path(entry),
+                :method => :delete,
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-mini btn-danger' %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+  new_entry_path,
+  :class => 'btn btn-primary' %>
+

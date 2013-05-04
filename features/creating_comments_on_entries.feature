@@ -21,10 +21,12 @@ Feature: Creating comments on an entry
     And I press "Create Comment"
     Then I should see "Comment has been created"
     And I should see "Great effort, Sir! You are an inspiration!!" 
+    And I follow "Sign out"
+    And I follow "Finished Boston Marathon very thrilled"
+    Then I should see "Great effort, Sir! You are an inspiration!!" 
 
   Scenario: creating an invalid comment
     And I follow "Finished Boston Marathon very thrilled"
     And I press "Create Comment"
     Then I should see "Comment has not been created"
     And I should see "Text can't be blank" 
-

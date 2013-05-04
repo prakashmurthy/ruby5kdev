@@ -37,6 +37,16 @@
   <% end %>
   </dd>
 </dl>
+<br>
+  <% if user_signed_in? && current_user == @user %>
+    <%= link_to "Edit Profile",
+      edit_user_path(@user),
+      :class => 'btn btn-primary' %>
+    <%= link_to "Change password",
+      edit_user_registration_path,
+      :class => 'btn btn-primary' %>
+  <% end %>
+
 <br><br><br>
 <% training_entries = @user.entries.includes(:user) %>
 <% if training_entries.any? %>

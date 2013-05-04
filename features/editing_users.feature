@@ -7,7 +7,7 @@ Feature: Editing a user
     Given there are the following users:
       | email                | password | admin | first_name | last_name |
       | admin@ruby5k.in      | password | true  | Admin      | Istrator  |
-      | user@ruby5k.in       | password | true  | Ruby       | Tuesday   |
+      | user@ruby5k.in       | password | false | Ruby       | Tuesday   |
     And I am signed in as "admin@ruby5k.in"
     Given I am on the homepage
     And I follow "Admin"

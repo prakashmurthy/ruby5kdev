@@ -8,7 +8,7 @@ Given(/^there are the following users:$/) do |table|
   end
 end
 
-Given(/^I am signed in as them$/) do
+Given(/^I am (?:signed|logged) in as them$/) do
   steps (%Q{
     Given I am on the homepage
     When I follow "Sign in"
@@ -19,7 +19,7 @@ Given(/^I am signed in as them$/) do
   })
 end
 
-Given(/^I am signed in as "(.*?)"$/) do |email|
+Given(/^I am (?:signed|logged) in as "(.*?)"$/) do |email|
   @user = User.find_by_email( email )
   steps ( "Given I am signed in as them" )
 end

@@ -8,6 +8,10 @@ Feature: Viewing users
       | email             | password | unconfirmed | admin | first_name | last_name |
       | admin@ruby5k.in   | password | false       | true  | Admin      | User      |
       | user@ruby5k.in    | password | false       | false | Vincent    | Vega      |
+    And "user@ruby5k.in" has created the following entries:
+      | distance | time | location | description |
+      | 7        | 65   | statium  | Awesome!    |
+      | 5        | 61   | lake     | Not bad     |
 
   Scenario: Viewing users from admin link
     And I am signed in as "admin@ruby5k.in"
@@ -22,4 +26,6 @@ Feature: Viewing users
     When I am on the homepage
     And I follow "Runners"
     Then I should see "Admin User"
-    And I should see "Vincent Vega"
+    And I follow "Vincent Vega"
+    And I should see "Training runs posted by Vincent Vega"
+    And I should see "statium"

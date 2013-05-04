@@ -8,14 +8,6 @@
     <dt><strong>Email :</strong></dt>
     <dd><%= @user.email %></dd>
   <% end %>
-  <dt><strong>First Name :</strong></dt>
-  <dd><%= @user.first_name %></dd>
-  <dt><strong>Last name :</strong></dt>
-  <dd><%= @user.last_name %></dd>
-  <dt><strong>Created At :</strong></dt>
-  <dd><%= @user.created_at.strftime( "%Y-%m-%d %H:%M:S %z" ) %></dd>
-  <dt><strong>Admin User? :</strong></dt>
-  <dd><%= @user.admin? ? "Yes" : "No"  %></dd>
   <dt><strong>Running in Pune? :</strong></dt>
   <dd><%= @user.running_in_pune? ? "Yes" : "No"  %></dd>
   <dt><strong>My level as a runner :</strong></dt>
@@ -45,4 +37,11 @@
   <% end %>
   </dd>
 </dl>
-
+<% training_entries = @user.entries.includes(:user) %>
+<% if training_entries.any? %>
+  <br><br><br>
+  <h4>Training runs posted by <%= @user.name %></h4>
+  <%= render :partial => "entries/table", :locals => { :entries => training_entries } %>
+<% else %>
+  <b><%= @user.name %> has not posted any training runs on <%= link_to "ruby5k.in", root_path %></b>
+<% end %>

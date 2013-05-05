@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505052813) do
+ActiveRecord::Schema.define(:version => 20130505152355) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(:version => 20130505052813) do
     t.string   "twitter_id"
     t.string   "twitter_screen_name"
     t.string   "twitter_display_name"
+    t.integer  "github_id"
+    t.string   "github_user_name"
+    t.string   "github_display_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

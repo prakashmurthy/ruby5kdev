@@ -12,6 +12,7 @@ gem 'bullet', group: :development
 
 gem 'omniauth'
 gem 'omniauth-twitter' 
+gem 'omniauth-github' 
 
 group:development, :test do
   gem "rspec-rails", "~> 2.12.2"

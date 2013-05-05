@@ -10,6 +10,9 @@ gem 'devise', '2.2.3'
 
 gem 'bullet', group: :development
 
+gem 'omniauth'
+gem 'omniauth-twitter' 
+
 group:development, :test do
   gem "rspec-rails", "~> 2.12.2"
   gem "factory_girl_rails", "~> 4.2.0" 

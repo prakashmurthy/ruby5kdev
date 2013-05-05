@@ -24,7 +24,6 @@
           <div class="nav-collapse">
             <ul class="nav">
               <li><%= link_to "I never ran in my life!", newcomers_path %></li>
-              <li><%= link_to "Couch to 5K Training Plan", "http://www.coolrunning.com/engine/2/2_3/181.shtml", :target => "_blank" %></li>
               <li><%= link_to "Runners", users_path %></li>
               <% if user_signed_in? && current_user.admin? %>
                 <li><%= link_to "Admin", admin_root_path %></li>
@@ -32,7 +31,7 @@
                 <li><%= link_to "RubyConfIndia 2013", "http://rubyconfindia.org/2013/", :target => "_blank" %></li>
               <% end %>
               <% if user_signed_in? %>
-                <li><%= link_to "Signed in as #{current_user.email}", user_path(current_user) %></li>
+                <li><%= link_to "Signed in as #{current_user.display_name}", user_path(current_user) %></li>
               <% else %>
                 <% if current_page?( new_user_registration_path ) %>
                   <li><a href="#">Signing up</a></li>
@@ -48,6 +47,9 @@
                 <% else %>
                   <li><%= link_to "Sign in", new_user_session_path %></li>
                 <% end %>
+                Or use <%= link_to image_tag("icons/twitter_32.png"),
+                                   user_omniauth_authorize_path(:twitter),
+                                   :id => "sign_in_with_twitter" %>
               <% end %>
             </ul>
           </div>

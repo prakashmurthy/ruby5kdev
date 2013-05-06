@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   module OmniauthCallbacks
     def find_or_create_for_twitter(response)
-      binding.pry
       data = response['extra']['raw_info']
       if user = User.find_by_twitter_id(data["id"].to_s)
         user
@@ -18,6 +17,7 @@ class User < ActiveRecord::Base
         user.twitter_id = data["id"]
         user.twitter_screen_name = data["screen_name"]
         user.twitter_display_name = data["name"]
+        user.avatar_url = data["profile_image_url_https"]
         user.name = data["name"]
         user.confirm!
         user

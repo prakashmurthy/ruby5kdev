@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     end
 
     def find_or_create_for_github(response)
-      data = response['extra']['user_hash']
+      data = response['extra']['raw_info']
       if user = User.find_by_github_id(data["id"])
         user
       elsif user = User.find_by_email(data["email"])
@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
         user.github_user_name = data["login"]
         user.github_display_name = data["name"]
         user.name = data["name"]
+        user.avatar_url = data["avatar_url"]
         user
       else # Create a user with a stub password
         user = User.new(:email => data['email'],
@@ -40,6 +41,8 @@ class User < ActiveRecord::Base
         user.github_id = data["id"]
         user.github_user_name = data["login"]
         user.github_display_name = data["name"]
+        user.name = data["name"]
+        user.avatar_url = data["avatar_url"]
         user.confirm!
         user
       end

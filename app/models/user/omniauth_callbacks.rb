@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   module OmniauthCallbacks
     def find_or_create_for_twitter(response)
+      binding.pry
       data = response['extra']['raw_info']
       if user = User.find_by_twitter_id(data["id"].to_s)
         user
@@ -8,15 +9,18 @@ class User < ActiveRecord::Base
         user.twitter_id = data["id"]
         user.twitter_screen_name = data["screen_name"]
         user.twitter_display_name = data["name"]
+        user.name = data["name"]
+        user.avatar_url = data["profile_image_url_https"]
         user
       else # Create a user with a stub password
         user = User.new(:email => "twitter+#{data["id"]}@example.com",
                         :password => Devise.friendly_token[0,20])
-                        user.twitter_id = data["id"]
-                        user.twitter_screen_name = data["screen_name"]
-                        user.twitter_display_name = data["name"]
-                        user.confirm!
-                        user
+        user.twitter_id = data["id"]
+        user.twitter_screen_name = data["screen_name"]
+        user.twitter_display_name = data["name"]
+        user.name = data["name"]
+        user.confirm!
+        user
       end
     end
 
@@ -28,6 +32,7 @@ class User < ActiveRecord::Base
         user.github_id = data["id"]
         user.github_user_name = data["login"]
         user.github_display_name = data["name"]
+        user.name = data["name"]
         user
       else # Create a user with a stub password
         user = User.new(:email => data['email'],

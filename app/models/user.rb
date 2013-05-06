@@ -33,6 +33,13 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def name=(full_name)
+    full_name_parts = full_name.split(" ")
+    self.last_name = full_name_parts.pop
+    self.first_name = full_name_parts.join(" ")
+    self.first_name = nil if first_name.empty?
+  end
+
   def self.find_by_name(name)
     name_parts = name.split( " " )
     user = User.find_by_first_name( name_parts[0] )

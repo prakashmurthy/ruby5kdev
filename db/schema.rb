@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505152355) do
+ActiveRecord::Schema.define(:version => 20130506034128) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20130505152355) do
     t.integer  "github_id"
     t.string   "github_user_name"
     t.string   "github_display_name"
+    t.string   "avatar_url"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

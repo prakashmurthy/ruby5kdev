@@ -13,7 +13,7 @@ end
 Given /^I have mocked a successful GitHub response$/ do
   OmniAuth.config.mock_auth[:github] = {
     "extra" => {
-      "user_hash" => {
+      "raw_info" => {
         "id" => '12345',
         "email" => "phil@haack.com",
         "login" => "philhaack",

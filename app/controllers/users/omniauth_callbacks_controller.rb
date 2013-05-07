@@ -4,7 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       class_eval %Q{
         def #{provider}
           @user = User.find_or_create_for_#{provider}(env["omniauth.auth"])
-          flash[:notice] = "Signed in with #{provider.to_s.titleize} successfully."
+          flash[:notice] = "Signed in with #{provider.to_s.titleize} successfully. Please review and update your profile."
           sign_in_and_redirect @user, :event => :authentication
         end
       }

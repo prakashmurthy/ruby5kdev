@@ -14,6 +14,8 @@ gem 'omniauth'
 gem 'omniauth-twitter' 
 gem 'omniauth-github' 
 
+gem 'figaro'
+
 group:development, :test do
   gem "rspec-rails", "~> 2.12.2"
   gem "factory_girl_rails", "~> 4.2.0" 

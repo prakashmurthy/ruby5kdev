@@ -4,7 +4,7 @@
 </div>
 
 <dl class="dl-horizontal">
-  <% if user_signed_in? && current_user.admin? %>
+  <% if user_signed_in? %>
     <dt><strong>Email :</strong></dt>
     <dd><%= @user.email %></dd>
   <% end %>

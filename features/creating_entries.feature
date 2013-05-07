@@ -11,6 +11,7 @@ Feature: Creating entries
     And I click on "New Training Run"
     Then I should see "You need to sign in or sign up before continuing."
     And I am signed in as them
+    And I click on "New Training Run"
 
   Scenario: creating an entry
     And I fill in "Distance" with "5"

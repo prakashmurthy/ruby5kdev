@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :find_entry
+  before_filter :find_entry, only: [:create]
 
   def create
     @comment = @entry.comments.build(params[:comment].merge(:user => current_user ))
@@ -13,9 +13,16 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to :back, :notice => "Comment has been deleted"
+  end
+
   private
 
   def find_entry
     @entry = Entry.find(params[:entry_id])
   end
+
 end

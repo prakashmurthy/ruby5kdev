@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'pg', '0.14.1'
 gem 'mysql', '2.9.1'
+gem 'sqlite3', '1.3.7'
 
 gem 'devise', '2.2.3'
 

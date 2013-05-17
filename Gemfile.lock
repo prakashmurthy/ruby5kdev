@@ -132,7 +132,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     multipart-post (1.2.0)
-    mysql (2.9.1)
+    mysql2 (0.3.11)
     nokogiri (1.5.9)
     oauth (0.4.7)
     oauth2 (0.8.1)
@@ -268,7 +268,7 @@ DEPENDENCIES
   jquery-rails
   launchy (~> 2.2.0)
   less-rails
-  mysql (= 2.9.1)
+  mysql2 (= 0.3.11)
   omniauth
   omniauth-github
   omniauth-twitter

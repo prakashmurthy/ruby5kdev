@@ -6,7 +6,7 @@ env:
   - DB=mysql
   - DB=postgresql
 script:
-  - RAILS_ENV=test bundle exec rake --trace db:migrate test
+  - RAILS_ENV=test bundle exec rake --trace db:migrate rspec cucumber
 before_script:
   - cp config/database.travis.yml config/database.yml
   - mysql -e 'create database myapp_test'

@@ -5,6 +5,7 @@ env:
   - DB=sqlite
   - DB=postgresql
 script:
+  - bundle
   - RAILS_ENV=test bundle exec rake --trace db:migrate spec cucumber
 before_script:
   - cp Gemfile.travis Gemfile

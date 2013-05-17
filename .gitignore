@@ -16,3 +16,5 @@
 bin/
 # Ignore application configuration
 /config/application.yml
+# Ignore database.yml
+/config/database.yml

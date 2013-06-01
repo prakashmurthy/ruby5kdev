@@ -17,8 +17,8 @@
         <td><%= link_to gravatar_for(entry.user), user_path(entry.user) %></td>
         <td><%= link_to entry.distance, entry_path(entry) %></td>
         <td><%= link_to entry.time, entry_path(entry) %></td>
-        <td><%= link_to entry.location, entry_path(entry) %></td>
-        <td><%= link_to truncate(entry.description, :length => 75, :separator => ' ', :omission => '... (more)'), entry_path(entry) %></td>
+        <td><%= link_to truncate(entry.location, :length => 25, :separator => ' ', :omission => '...'), entry_path(entry) %></td>
+        <td><%= link_to truncate(entry.description, :length => 60, :separator => ' ', :omission => '... (more)'), entry_path(entry) %></td>
         <td><%= link_to humanize(Time.now - entry.created_at), entry_path(entry) %></td>
         <td>
           <% if user_signed_in? %>

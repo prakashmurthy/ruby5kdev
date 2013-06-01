@@ -3,6 +3,10 @@ module EntriesHelper
     entry.user == current_user && !current_user.nil?
   end
 
+  def current_user_is_creator_of_comment?(comment)
+    comment.user == current_user && !current_user.nil?
+  end
+
   def gravatar_for(user, size="80x80")
     if user.avatar_url.present?
       gravatar_url = user.avatar_url

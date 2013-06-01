@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :entries
   # Include default devise modules. Others available are:
-  # :token_authenticatable, 
-  # :lockable, :timeoutable 
+  # :token_authenticatable,
+  # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
                   :running_in_pune, :runner_goal, :runner_level
   # attr_accessible :title, :body
 
-  def display_name 
+  def display_name
     if twitter_id
       "#{twitter_display_name} (@#{twitter_screen_name})"
     elsif github_id
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    "#{first_name} #{last_name}"
+    "#{first_name} #{last_name}".strip
   end
 
   def name=(full_name)

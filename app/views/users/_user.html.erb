@@ -48,7 +48,7 @@
   <% end %>
 
 <br><br><br>
-<% training_entries = @user.entries.includes(:user) %>
+<% training_entries = @user.entries.order("created_at DESC").includes(:user) %>
 <% if training_entries.any? %>
   <h4>Training runs posted by <%= @user.name %></h4>
   <%= render :partial => "entries/table", :locals => { :entries => training_entries } %>
